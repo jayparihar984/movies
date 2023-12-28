@@ -9,5 +9,5 @@ JWT_SECRET="dsadasdas78367824632423"
 
 NEXT_PUBLIC_API_URL="http://localhost:3000/"
 
-NODE_ENV="production" 
+NODE_ENV="development" 
 
