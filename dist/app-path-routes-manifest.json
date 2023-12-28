@@ -1,0 +1,15 @@
+{
+  "/page": "/",
+  "/_not-found": "/_not-found",
+  "/movies/page": "/movies",
+  "/signup/page": "/signup",
+  "/api/login/route": "/api/login",
+  "/api/ping/route": "/api/ping",
+  "/movies/[id]/page": "/movies/[id]",
+  "/api/signup/route": "/api/signup",
+  "/movies/new/page": "/movies/new",
+  "/profile/[id]/page": "/profile/[id]",
+  "/profile/new/page": "/profile/new",
+  "/api/movies/route": "/api/movies",
+  "/api/movies/[id]/route": "/api/movies/[id]"
+}
