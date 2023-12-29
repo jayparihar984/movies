@@ -54,7 +54,7 @@ export default function HomePage() {
     <div className="min-h-[calc(100vh-7rem)] flex justify-center items-center">
       <div className="sigUpForm">
         <header className="flex justify-center my-3">
-          <h1 className="text-7xl">Signup</h1>
+          <h1 className="text-5xl">Signup</h1>
         </header>
         <div className="my-4">
           <input
@@ -67,7 +67,7 @@ export default function HomePage() {
             className="border-2 w-full p-4 rounded-lg InputFieldStyle"
           />
           <span className="text-danger fw-bold mt-2 d-block">
-            {errors.name ? errors.name + "." : ""}
+            {errors.name ? errors.name : ""}
           </span>
         </div>
         <div className="my-4">
@@ -111,6 +111,9 @@ export default function HomePage() {
           </button>
         </div>
       </div>
+      <div className="bottomImage">
+          <img src="./Vector2.png" width={"100%"} />
+        </div>
     </div>
   );
 }

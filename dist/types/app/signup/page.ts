@@ -1,4 +1,4 @@
-// File: /home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/signup/page.jsx
+// File: /home/atm/Desktop/my-movies/src/app/signup/page.jsx
 import * as entry from '../../../../src/app/signup/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

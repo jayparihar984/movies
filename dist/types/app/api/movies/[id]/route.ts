@@ -1,4 +1,4 @@
-// File: /home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/api/movies/[id]/route.js
+// File: /home/atm/Desktop/my-movies/src/app/api/movies/[id]/route.js
 import * as entry from '../../../../../../src/app/api/movies/[id]/route.js'
 import type { NextRequest } from 'next/server.js'
 

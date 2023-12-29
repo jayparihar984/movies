@@ -1,9 +1,7 @@
 "use client";
 import { React, useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
-import Link from "next/link";
 import { RiDownload2Line } from "react-icons/ri";
-import { Button } from "react-bootstrap";
 import axios from "axios";
 
 const NewTask = () => {
@@ -14,7 +12,6 @@ const NewTask = () => {
     editFile: "",
   });
 
-
   const params = useParams();
   const router = useRouter();
 
@@ -22,16 +19,19 @@ const NewTask = () => {
   const [errors, setErrors] = useState({});
 
   const getTask = async () => {
-    
     const localUser = localStorage.getItem("userData")
-    ? JSON.parse(localStorage.getItem("userData"))
-    : "";
+      ? JSON.parse(localStorage.getItem("userData"))
+      : "";
 
     setIsSubmitting(true);
     axios
-      .post(`/api/movies/${params.id}`,{},{headers:{"Authorization" : `Bearer ${localUser?.token}`} })
+      .post(
+        `/api/movies/${params.id}`,
+        {},
+        { headers: { Authorization: `Bearer ${localUser?.token}` } }
+      )
       .then(function (response) {
-        if(response.data.title==undefined){
+        if (response.data.title == undefined) {
           router.push("/movies");
         }
 
@@ -43,17 +43,14 @@ const NewTask = () => {
           file: "",
           editFile: response.data.poster ? response.data.poster : "",
         });
-
       })
       .catch(function (error) {
-        if(error.response.status==401){
-            localStorage.setItem("userData","");
-            router.push("/");
+        if (error.response.status == 401) {
+          localStorage.setItem("userData", "");
+          router.push("/");
         }
         setErrors({ ...errors, common: error.response.data.error });
       });
-
-
   };
 
   useEffect(() => {
@@ -80,27 +77,25 @@ const NewTask = () => {
 
   const handleChange = (e) => {
     setNewTask({ ...newTask, [e.target.name]: e.target.value });
-   
   };
 
   const handleFileChange = (e) => {
     console.log(e.target.files);
 
     setNewTask({ ...newTask, [e.target.name]: e.target.files[0] });
-
   };
 
   const validate = () => {
     let errors = {};
 
     if (!newTask.title) {
-      errors.title = "Title is required";
+      errors.title = "Title is required.";
     }
     if (!newTask.publishing_year) {
-      errors.publishing_year = "Publishing year is required";
+      errors.publishing_year = "Publishing year is required.";
     }
     if (!newTask.file && !newTask.editFile) {
-      errors.file = "Image is required";
+      errors.file = "Image is required.";
     }
 
     return errors;
@@ -108,8 +103,8 @@ const NewTask = () => {
 
   const createTask = async () => {
     const localUser = localStorage.getItem("userData")
-    ? JSON.parse(localStorage.getItem("userData"))
-    : "";
+      ? JSON.parse(localStorage.getItem("userData"))
+      : "";
     const fd = new FormData();
     fd.append("title", newTask.title);
     fd.append("publishing_year", newTask.publishing_year);
@@ -117,14 +112,16 @@ const NewTask = () => {
     fd.append("action", "add");
 
     axios
-      .post("/api/movies", fd,{headers:{"Authorization" : `Bearer ${localUser?.token}`} })
+      .post("/api/movies", fd, {
+        headers: { Authorization: `Bearer ${localUser?.token}` },
+      })
       .then(function (response) {
         router.push("/movies");
       })
       .catch(function (error) {
-        if(error.response.status==401){
-            localStorage.setItem("userData","");
-            router.push("/");
+        if (error.response.status == 401) {
+          localStorage.setItem("userData", "");
+          router.push("/");
         }
         setIsSubmitting(false);
         setErrors({ ...errors, common: error.response.data.error });
@@ -155,14 +152,16 @@ const NewTask = () => {
     fd.append("file", newTask.file);
 
     axios
-      .put(`/api/movies/${params.id}`, fd,{headers:{"Authorization" : `Bearer ${localUser?.token}`} })
+      .put(`/api/movies/${params.id}`, fd, {
+        headers: { Authorization: `Bearer ${localUser?.token}` },
+      })
       .then(function (response) {
         router.push("/movies");
       })
       .catch(function (error) {
-        if(error.response.status==401){
-            localStorage.setItem("userData","");
-            router.push("/");
+        if (error.response.status == 401) {
+          localStorage.setItem("userData", "");
+          router.push("/");
         }
         setIsSubmitting(false);
 
@@ -184,117 +183,113 @@ const NewTask = () => {
   }, []);
 
   return (
-    <div className="container">
-      <nav className="py-5 mb-2">
-        <div className="px-10 md:px-0 mx-auto flex justify-between">
-          <div>
-            <span className="text-5xl font-bold">
-              {!params.id ? "Create a new movie " : "Edit"}
-            </span>
+    <>
+      <div className="container">
+        <nav className="py-5 mb-2">
+          <div className="px-10 md:px-0 mx-auto flex justify-between">
+            <div>
+              <span className="text-4xl font-bold">
+                {!params.id ? "Create a new movie " : "Edit"}
+              </span>
+            </div>
           </div>
-        </div>
-      </nav>
-      <div className="row">
-        <div className="col-6">
-          <label htmlFor="fileUpload" className="DragImage">
-            {newTask.file == "" && newTask.editFile == "" && (
-              <>
-                <RiDownload2Line className="display-6 mb-3" />
-                <span className="display-8 fw-bold">Drag an image here </span>
-              </>
-            )}
+        </nav>
+        <div className="row">
+          <div className="col-sm-12 col-lg-6">
+            <label htmlFor="fileUpload" className="DragImage">
+              {newTask.file == "" && newTask.editFile == "" && (
+                <>
+                  <RiDownload2Line className="display-6 mb-3" />
+                  <span className="display-8 fw-bold">Drag an image here </span>
+                </>
+              )}
 
-            {newTask.file != "" && (
-              <img width="90%" src={URL.createObjectURL(newTask.file)} />
-            )}
-            {newTask.file=="" && newTask.editFile != "" && (
-              <img
-                width="90%"
-                src={
-                  process.env.NEXT_PUBLIC_API_URL +
-                  "uploads/" +
-                  newTask.editFile
-                }
+              {newTask.file != "" && (
+                <img width="90%" src={URL.createObjectURL(newTask.file)} />
+              )}
+              {newTask.file == "" && newTask.editFile != "" && (
+                <img
+                  width="90%"
+                  src={
+                    process.env.NEXT_PUBLIC_API_URL +
+                    "uploads/" +
+                    newTask.editFile
+                  }
+                />
+              )}
+            </label>
+            <span className="text-danger fw-bold">
+              {errors.file ? errors.file : ""}
+            </span>
+            <input
+              type="file"
+              style={{ display: "none" }}
+              placeholder="file"
+              name="file"
+              id="fileUpload"
+              accept="image/png, image/gif, image/jpeg"
+              onChange={handleFileChange}
+              className="border-2 w-full p-4 rounded-lg my-4"
+            />
+          </div>
+          <div className="col-sm-12 col-lg-6">
+            <div>
+              <input
+                type="text"
+                placeholder="Title"
+                name="title"
+                onChange={handleChange}
+                value={newTask.title}
+                autoFocus
+                className="border-2 w-full p-4 rounded-lg my-4 InputFieldStyle mb-1"
               />
-            )}
-          </label>
-          <span className="text-danger fw-bold">
-            {errors.file ? errors.file + "." : ""}
-          </span>
-          <input
-            type="file"
-            style={{ display: "none" }}
-            placeholder="file"
-            name="file"
-            id="fileUpload"
-            accept="image/png, image/gif, image/jpeg"
-            onChange={handleFileChange}
-            className="bg-gray-800 border-2 w-full p-4 rounded-lg my-4"
-          />
-        </div>
-        <div className="col-6">
-          <div>
-            <input
-              type="text"
-              placeholder="Title"
-              name="title"
-              onChange={handleChange}
-              value={newTask.title}
-              autoFocus
-              className="bg-gray-800 border-2 w-full p-4 rounded-lg my-4 InputFieldStyle mb-1"
-            />
-            <span className="text-danger fw-bold">
-              {errors.title ? errors.title + "." : ""}
-            </span>
-          </div>
-          <div>
-            <input
-              name="publishing_year"
-              type="number"
-              placeholder="Publishing year"
-              onChange={handleChange}
-              value={newTask.publishing_year}
-              className="bg-gray-800 border-2 w-half p-4 d-block rounded-lg my-4 InputFieldStyle mb-1"
-            />
-            <span className="text-danger fw-bold">
-              {errors.publishing_year ? errors.publishing_year + "." : ""}
-            </span>
-          </div>
-          <p>{errors.common ? errors.common : ""}</p>
-          <div className="mt-5 formSubmition">
-            <i
-              onClick={() => router.push("/movies")}
-              className="createEditCancelBtn"
-            >
-              Cancel
-            </i>
-            {isSubmitting==true ?
-
-                <i
-               
-                variant="success"
-
-                size="lg"
-                className="ml-3 createEditSubmitBtn"
-                >
-                {params.id ? "Updating" : "Submiting"}
-                </i>
-
-            :
-              <i
-                onClick={handleSubmit}
-                variant="success"
-                
-                size="lg"
-                className="ml-3 createEditSubmitBtn"
+              <span className="text-danger fw-bold">
+                {errors.title ? errors.title : ""}
+              </span>
+            </div>
+            <div>
+              <input
+                name="publishing_year"
+                type="number"
+                placeholder="Publishing year"
+                onChange={handleChange}
+                value={newTask.publishing_year}
+                className="border-2 w-half p-4 d-block rounded-lg my-4 InputFieldStyle mb-1"
+              />
+              <span className="text-danger fw-bold">
+                {errors.publishing_year ? errors.publishing_year : ""}
+              </span>
+            </div>
+            <p>{errors.common ? errors.common : ""}</p>
+            <div className="mt-5 formSubmition">
+              <span
+                onClick={() => router.push("/movies")}
+                className="createEditCancelBtn"
               >
-                {params.id ? "Update" : "Submit"}
-              </i>
-            }
+                Cancel
+              </span>
+              {isSubmitting == true ? (
+                <span
+                  variant="success"
+                  size="lg"
+                  className="ml-3 createEditSubmitBtn"
+                >
+                  {params.id ? "Updating" : "Submiting"}
+                </span>
+              ) : (
+                <span
+                  onClick={handleSubmit}
+                  variant="success"
+                  size="lg"
+                  className="ml-5 createEditSubmitBtn"
+                >
+                  {params.id ? "Update" : "Submit"}
+                </span>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-      {/* {params.id && (
+        {/* {params.id && (
           <button
             className="bg-red-500 px-3 py-1 rounded-md"
             onClick={handleDelete}
@@ -302,7 +297,11 @@ const NewTask = () => {
             Delete
           </button>
         )} */}
-    </div>
+      </div>
+      <div className="bottomImageOnEdit">
+       
+      </div>
+    </>
   );
 };
 

@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../styles/globals.css";
 
 export const metadata = {
-  title: "NextMongo",
-  description: "NextMongo is a simple app to manage tasks.",
+  title: "Movies",
+  description: "Movies App.",
 }
 
 function RootLayout({ children }) {

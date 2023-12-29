@@ -82,61 +82,66 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-[calc(100vh-7rem)] flex justify-center items-center">
-      <div className="sigInForm">
-        <header className="flex justify-center">
-          <h1 className="text-7xl mb-4">Sign in</h1>
-        </header>
-        <div className="my-4">
-          <input
-          
-            type="email"
-            placeholder="Email"
-            name="email"
-            onChange={handleChange}
-            value={newUser.email}
-            autoFocus
-            className="border-2 w-full p-4 rounded-lg InputFieldStyle"
-          />
-          <span className="text-danger fw-bold mt-2 d-block">
-            {errors.email ? errors.email : ""}
-          </span>
+    <>
+      <div className="min-h-[calc(100vh-7rem)] flex justify-center items-center">
+        <div className="sigInForm">
+          <header className="flex justify-center">
+            <h1 className="text-5xl mb-4">Sign in</h1>
+          </header>
+          <div className="my-5">
+            <input
+              autoComplete="nope"
+              type="email"
+              placeholder="Email"
+              name="email"
+              onChange={handleChange}
+              value={newUser.email}
+              autoFocus
+              className="border-2 w-full p-4 rounded-lg InputFieldStyle"
+            />
+            <span className="text-danger fw-bold mt-2 d-block">
+              {errors.email ? errors.email : ""}
+            </span>
+          </div>
+          <div className="my-5">
+            <input
+              autocomplete="new-password"
+              type="password"
+              placeholder="Password"
+              name="password"
+              onChange={handleChange}
+              value={newUser.password}
+              autoFocus
+              className="border-2 w-full p-4 rounded-lg InputFieldStyle"
+            />
+            <span className="text-danger fw-bold mt-2 d-block">
+              {errors.password ? errors.password : ""}
+            </span>
+          </div>
+          <div className="flex justify-center items-center mb-4 remember_me_box">
+            <input
+              type="checkbox"
+              checked={newUser.remember}
+              onChange={handleRemamberMe}
+              className="Remember"
+            />
+            <label>Remember me</label>
+          </div>
+          <p className="mb-2 text-rose-600 h5">
+            {errors.common ? errors.common : ""}
+          </p>
+          <button
+            disabled={isSubmitting}
+            onClick={handleSubmit}
+            className="bg-green-400 padded w-full text-white font-semibold py-3 rounded-lg h3"
+          >
+            Login
+          </button>
         </div>
-        <div className="my-4">
-          <input
-           
-            type="password"
-            placeholder="Password"
-            name="password"
-            onChange={handleChange}
-            value={newUser.password}
-            autoFocus
-            className="border-2 w-full p-4 rounded-lg InputFieldStyle"
-          />
-          <span className="text-danger fw-bold mt-2 d-block">
-            {errors.password ? errors.password  : ""}
-          </span>
-        </div>
-        <div className="flex justify-center items-center mb-3 remember_me_box">
-          <input
-            type="checkbox"
-            checked={newUser.remember}
-            onChange={handleRemamberMe}
-            className="Remember"
-          />
-          <label>Remember Me</label>
-        </div>
-        <p className="mb-2 text-rose-600 h5">
-          {errors.common ? errors.common  : ""}
-        </p>
-        <button
-          disabled={isSubmitting}
-          onClick={handleSubmit}
-          className="bg-green-400 padded w-full text-white font-semibold py-3 rounded-lg h3"
-        >
-         {isSubmitting==true?"Loading...":"Login"}
-        </button>
       </div>
-    </div>
+      <div className="bottomImage">
+        <img src="./Vector2.png" width={"100%"} />
+      </div>
+    </>
   );
 }

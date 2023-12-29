@@ -82,24 +82,10 @@ module.exports = require("next/dist/shared/lib/hooks-client-context");
 
 /***/ }),
 
-/***/ 7160:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router-context");
-
-/***/ }),
-
 /***/ 893:
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix");
-
-/***/ }),
-
-/***/ 2336:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/format-url");
 
 /***/ }),
 
@@ -117,13 +103,6 @@ module.exports = require("next/dist/shared/lib/router/utils/is-bot");
 
 /***/ }),
 
-/***/ 120:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/is-local-url");
-
-/***/ }),
-
 /***/ 8231:
 /***/ ((module) => {
 
@@ -138,24 +117,10 @@ module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slas
 
 /***/ }),
 
-/***/ 982:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/resolve-href");
-
-/***/ }),
-
 /***/ 9618:
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/server-inserted-html");
-
-/***/ }),
-
-/***/ 8423:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/utils");
 
 /***/ }),
 
@@ -243,7 +208,7 @@ module.exports = require("zlib");
 
 /***/ }),
 
-/***/ 9762:
+/***/ 2212:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -278,7 +243,7 @@ __webpack_require__.r(__webpack_exports__);
         'new',
         {
         children: ['__PAGE__', {}, {
-          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 3047)), "/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/movies/new/page.jsx"],
+          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 3047)), "/home/atm/Desktop/my-movies/src/app/movies/new/page.jsx"],
           
         }]
       },
@@ -295,13 +260,13 @@ __webpack_require__.r(__webpack_exports__);
       ]
       },
         {
-          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 5004)), "/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/layout.jsx"],
-'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 9653)), "/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/not-found.jsx"],
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 5004)), "/home/atm/Desktop/my-movies/src/app/layout.jsx"],
+'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 9653)), "/home/atm/Desktop/my-movies/src/app/not-found.jsx"],
           
         }
       ]
       }.children;
-    const pages = ["/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/movies/new/page.jsx"];
+    const pages = ["/home/atm/Desktop/my-movies/src/app/movies/new/page.jsx"];
 
     
 
@@ -333,7 +298,7 @@ __webpack_require__.r(__webpack_exports__);
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [212,558,866,132,418,19,871], () => (__webpack_exec__(9762)));
+var __webpack_exports__ = __webpack_require__.X(0, [212,558,866,407,418,736,457], () => (__webpack_exec__(2212)));
 module.exports = __webpack_exports__;
 
 })();

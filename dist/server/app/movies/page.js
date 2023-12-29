@@ -276,7 +276,7 @@ module.exports = require("zlib");
 
 /***/ }),
 
-/***/ 1436:
+/***/ 2928:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -309,7 +309,7 @@ __webpack_require__.r(__webpack_exports__);
         'movies',
         {
         children: ['__PAGE__', {}, {
-          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2757)), "/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/movies/page.jsx"],
+          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2757)), "/home/atm/Desktop/my-movies/src/app/movies/page.jsx"],
           
         }]
       },
@@ -320,13 +320,13 @@ __webpack_require__.r(__webpack_exports__);
       ]
       },
         {
-          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 5004)), "/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/layout.jsx"],
-'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 9653)), "/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/not-found.jsx"],
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 5004)), "/home/atm/Desktop/my-movies/src/app/layout.jsx"],
+'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 9653)), "/home/atm/Desktop/my-movies/src/app/not-found.jsx"],
           
         }
       ]
       }.children;
-    const pages = ["/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/movies/page.jsx"];
+    const pages = ["/home/atm/Desktop/my-movies/src/app/movies/page.jsx"];
 
     
 
@@ -351,7 +351,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 448:
+/***/ 6833:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 3714))
@@ -374,13 +374,9 @@ __webpack_require__.d(__webpack_exports__, {
 var jsx_runtime_ = __webpack_require__(6786);
 // EXTERNAL MODULE: external "next/dist/compiled/react"
 var react_ = __webpack_require__(8038);
-// EXTERNAL MODULE: ./node_modules/next/link.js
-var next_link = __webpack_require__(1440);
-var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: ./node_modules/next/navigation.js
 var navigation = __webpack_require__(7114);
 ;// CONCATENATED MODULE: ./src/components/MovieCard.jsx
-
 
 
 function MovieCard({ movie }) {
@@ -392,9 +388,9 @@ function MovieCard({ movie }) {
         },
         children: [
             movie.poster != "" ? /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                src: "http://localhost:3000/" + "uploads/" + movie.poster
+                src: "http://192.168.29.110:3000/" + "uploads/" + movie.poster
             }) : /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                src: "http://localhost:3000/" + "uploads/no-img.jpg"
+                src: "http://192.168.29.110:3000/" + "uploads/no-img.jpg"
             }),
             /*#__PURE__*/ jsx_runtime_.jsx("h1", {
                 className: "text-2xl font-bold mt-2",
@@ -413,6 +409,9 @@ function MovieCard({ movie }) {
 }
 /* harmony default export */ const components_MovieCard = (MovieCard);
 
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__(1440);
+var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: ./node_modules/react-icons/io/index.esm.js
 var index_esm = __webpack_require__(2772);
 // EXTERNAL MODULE: ./node_modules/react-icons/rx/index.esm.js
@@ -452,6 +451,7 @@ var axios = __webpack_require__(4997);
         const fd = new FormData();
         fd.append("page", activePage);
         fd.append("action", "get-all");
+        fd.append("page_count", 8);
         axios/* default */.Z.post("/api/movies", fd, {
             headers: {
                 Authorization: `Bearer ${localUser?.token}`
@@ -498,78 +498,101 @@ var axios = __webpack_require__(4997);
     };
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
-            movies.length > 0 && /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                className: "container",
+            movies.length > 0 && /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
                 children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx("nav", {
-                        className: "pt-5 pb-3",
-                        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                            className: "px-10 md:px-0 mx-auto flex justify-between",
-                            children: [
-                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "container movieShowContainer",
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("nav", {
+                                className: "pt-5 pb-3",
+                                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                    className: "px-10 md:px-0 mx-auto flex justify-between",
                                     children: [
-                                        /*#__PURE__*/ jsx_runtime_.jsx("span", {
-                                            className: "text-5xl font-bold",
-                                            children: "My Movies"
+                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                            children: [
+                                                /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                                    className: "text-4xl font-bold",
+                                                    children: "My Movies"
+                                                }),
+                                                /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+                                                    href: "/movies/new",
+                                                    children: /*#__PURE__*/ jsx_runtime_.jsx(index_esm/* IoIosAddCircleOutline */.zUF, {
+                                                        className: "d-inline-block h1 ml-2"
+                                                    })
+                                                })
+                                            ]
                                         }),
-                                        /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                                            href: "/movies/new",
-                                            children: /*#__PURE__*/ jsx_runtime_.jsx(index_esm/* IoIosAddCircleOutline */.zUF, {
-                                                className: "d-inline-block h1 ml-2"
+                                        /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                            onClick: ()=>logout(),
+                                            children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("button", {
+                                                children: [
+                                                    "Logout ",
+                                                    /*#__PURE__*/ jsx_runtime_.jsx(rx_index_esm/* RxExit */.pGv, {
+                                                        className: "d-inline-block ml-3"
+                                                    })
+                                                ]
                                             })
                                         })
                                     ]
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                    onClick: ()=>logout(),
-                                    children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("button", {
-                                        children: [
-                                            "Logout ",
-                                            /*#__PURE__*/ jsx_runtime_.jsx(rx_index_esm/* RxExit */.pGv, {
-                                                className: "d-inline-block ml-3"
-                                            })
-                                        ]
-                                    })
                                 })
-                            ]
-                        })
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                    className: "d-flex flex-wrap gap-lg-5 gap-md-1 gap-sm-6",
+                                    children: movies.map((movie)=>/*#__PURE__*/ jsx_runtime_.jsx(components_MovieCard, {
+                                            movie: movie
+                                        }, movie._id))
+                                })
+                            }),
+                            noRecord == true && tottalItem > perPage && movies.length > 0 && /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: "Pagination-static",
+                                children: /*#__PURE__*/ jsx_runtime_.jsx(Pagination/* default */.Z, {
+                                    activePage: activePage,
+                                    itemsCountPerPage: perPage,
+                                    totalItemsCount: tottalItem,
+                                    pageRangeDisplayed: perPage,
+                                    onChange: handlePageChange,
+                                    itemClass: "page-item",
+                                    linkClass: "page-link",
+                                    innerClass: "pagination justify-content-center",
+                                    activeLinkClass: "active",
+                                    nextPageText: "Next",
+                                    prevPageText: "Prev"
+                                })
+                            })
+                        ]
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                        children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                            className: "d-flex flex-wrap gap-lg-5 gap-md-1 gap-sm-3",
-                            children: movies.map((movie)=>/*#__PURE__*/ jsx_runtime_.jsx(components_MovieCard, {
-                                    movie: movie
-                                }, movie._id))
-                        })
-                    }),
-                    noRecord == true && tottalItem > perPage && movies.length > 0 && /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                        className: "Pagination-static",
-                        children: /*#__PURE__*/ jsx_runtime_.jsx(Pagination/* default */.Z, {
-                            activePage: activePage,
-                            itemsCountPerPage: perPage,
-                            totalItemsCount: tottalItem,
-                            pageRangeDisplayed: perPage,
-                            onChange: handlePageChange,
-                            itemClass: "page-item",
-                            linkClass: "page-link",
-                            innerClass: "pagination justify-content-center",
-                            activeLinkClass: "active",
-                            nextPageText: "Next",
-                            prevPageText: "Prev"
+                        className: "moviesCardBottomImage",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                            src: "./Vector2.png",
+                            width: "100%"
                         })
                     })
                 ]
             }),
             noRecord == true && movies.length == 0 && /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                className: "HomePage",
+                className: "movieShowContainer",
                 children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx("h1", {
-                        children: "Your movie list is empty"
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "HomePage",
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("h1", {
+                                children: "Your movie list is empty"
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                className: "newMoviebtn fw-bold",
+                                onClick: addMovieHandler,
+                                children: "Add a new movie"
+                            })
+                        ]
                     }),
-                    /*#__PURE__*/ jsx_runtime_.jsx("span", {
-                        className: "newMoviebtn fw-bold",
-                        onClick: addMovieHandler,
-                        children: "Add a new movie"
+                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        className: "bottomImage",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                            src: "./Vector2.png",
+                            width: "100%"
+                        })
                     })
                 ]
             })
@@ -592,7 +615,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1363);
 
-const proxy = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/movies/page.jsx`)
+const proxy = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`/home/atm/Desktop/my-movies/src/app/movies/page.jsx`)
 
 // Accessing the __esModule property and exporting $$typeof are required here.
 // The __esModule getter forces the proxy target to create the default export
@@ -613,7 +636,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [212,558,866,132,746,19], () => (__webpack_exec__(1436)));
+var __webpack_exports__ = __webpack_require__.X(0, [212,558,866,407,534,736], () => (__webpack_exec__(2928)));
 module.exports = __webpack_exports__;
 
 })();

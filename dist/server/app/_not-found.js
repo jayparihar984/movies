@@ -124,7 +124,7 @@ module.exports = require("next/dist/shared/lib/server-inserted-html");
 
 /***/ }),
 
-/***/ 1209:
+/***/ 6282:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -164,8 +164,8 @@ __webpack_require__.r(__webpack_exports__);
       ]
       },
         {
-          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 5004)), "/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/layout.jsx"],
-'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 9653)), "/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/not-found.jsx"],
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 5004)), "/home/atm/Desktop/my-movies/src/app/layout.jsx"],
+'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 9653)), "/home/atm/Desktop/my-movies/src/app/not-found.jsx"],
           
         }
       ]
@@ -202,7 +202,7 @@ __webpack_require__.r(__webpack_exports__);
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [212,558,19], () => (__webpack_exec__(1209)));
+var __webpack_exports__ = __webpack_require__.X(0, [212,558,736], () => (__webpack_exec__(6282)));
 module.exports = __webpack_exports__;
 
 })();

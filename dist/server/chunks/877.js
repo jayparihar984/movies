@@ -3274,7 +3274,7 @@ const satisfies = __webpack_require__(2990);
 const toComparators = __webpack_require__(5645);
 const maxSatisfying = __webpack_require__(1681);
 const minSatisfying = __webpack_require__(4957);
-const minVersion = __webpack_require__(2292);
+const minVersion = __webpack_require__(3041);
 const validRange = __webpack_require__(6721);
 const outside = __webpack_require__(8210);
 const gtr = __webpack_require__(4097);
@@ -3634,7 +3634,7 @@ module.exports = minSatisfying;
 
 /***/ }),
 
-/***/ 2292:
+/***/ 3041:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";

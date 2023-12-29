@@ -75,7 +75,7 @@ module.exports = require("util");
 
 /***/ }),
 
-/***/ 3359:
+/***/ 2914:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -236,7 +236,7 @@ async function DELETE(request, { params }) {
     }
 }
 
-;// CONCATENATED MODULE: ./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?page=%2Fapi%2Fmovies%2F%5Bid%5D%2Froute&name=app%2Fapi%2Fmovies%2F%5Bid%5D%2Froute&pagePath=private-next-app-dir%2Fapi%2Fmovies%2F%5Bid%5D%2Froute.js&appDir=%2Fhome%2Fmahesh-parihar%2FDesktop%2Fnextjs%2Fmy-movies%2Fsrc%2Fapp&appPaths=%2Fapi%2Fmovies%2F%5Bid%5D%2Froute&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
+;// CONCATENATED MODULE: ./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?page=%2Fapi%2Fmovies%2F%5Bid%5D%2Froute&name=app%2Fapi%2Fmovies%2F%5Bid%5D%2Froute&pagePath=private-next-app-dir%2Fapi%2Fmovies%2F%5Bid%5D%2Froute.js&appDir=%2Fhome%2Fatm%2FDesktop%2Fmy-movies%2Fsrc%2Fapp&appPaths=%2Fapi%2Fmovies%2F%5Bid%5D%2Froute&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
 
     
 
@@ -244,7 +244,7 @@ async function DELETE(request, { params }) {
 
     
 
-    const options = {"definition":{"kind":"APP_ROUTE","page":"/api/movies/[id]/route","pathname":"/api/movies/[id]","filename":"route","bundlePath":"app/api/movies/[id]/route"},"resolvedPagePath":"/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/api/movies/[id]/route.js","nextConfigOutput":""}
+    const options = {"definition":{"kind":"APP_ROUTE","page":"/api/movies/[id]/route","pathname":"/api/movies/[id]","filename":"route","bundlePath":"app/api/movies/[id]/route"},"resolvedPagePath":"/home/atm/Desktop/my-movies/src/app/api/movies/[id]/route.js","nextConfigOutput":""}
     const routeModule = new (module_default())({
       ...options,
       userland: route_namespaceObject,
@@ -274,7 +274,7 @@ async function DELETE(request, { params }) {
 var __webpack_require__ = require("../../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [212,778,877,644], () => (__webpack_exec__(3359)));
+var __webpack_exports__ = __webpack_require__.X(0, [212,778,877,644], () => (__webpack_exec__(2914)));
 module.exports = __webpack_exports__;
 
 })();

@@ -124,7 +124,7 @@ module.exports = require("next/dist/shared/lib/server-inserted-html");
 
 /***/ }),
 
-/***/ 5006:
+/***/ 3169:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
         '[id]',
         {
         children: ['__PAGE__', {}, {
-          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 232)), "/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/profile/[id]/page.jsx"],
+          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 232)), "/home/atm/Desktop/my-movies/src/app/profile/[id]/page.jsx"],
           
         }]
       },
@@ -176,13 +176,13 @@ __webpack_require__.r(__webpack_exports__);
       ]
       },
         {
-          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 5004)), "/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/layout.jsx"],
-'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 9653)), "/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/not-found.jsx"],
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 5004)), "/home/atm/Desktop/my-movies/src/app/layout.jsx"],
+'not-found': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 9653)), "/home/atm/Desktop/my-movies/src/app/not-found.jsx"],
           
         }
       ]
       }.children;
-    const pages = ["/home/mahesh-parihar/Desktop/nextjs/my-movies/src/app/profile/[id]/page.jsx"];
+    const pages = ["/home/atm/Desktop/my-movies/src/app/profile/[id]/page.jsx"];
 
     
 
@@ -228,7 +228,7 @@ __webpack_require__.r(__webpack_exports__);
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [212,558,19,469], () => (__webpack_exec__(5006)));
+var __webpack_exports__ = __webpack_require__.X(0, [212,558,736,220], () => (__webpack_exec__(3169)));
 module.exports = __webpack_exports__;
 
 })();
