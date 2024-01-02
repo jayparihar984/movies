@@ -1,6 +1,6 @@
 # Login and Signup with Movies
 
-This Project uses Next.js and MongoDB, To work with your environment update below environment veriable. 
+This Project uses Next.js and MongoDB. To work with your environment update below environment veriable. 
 
 MONGODB_URI = "mongodb://localhost:27017/nextjs"
 
