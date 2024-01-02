@@ -1,6 +1,6 @@
 body {
   color: white;
-  background-color: rgb(18, 53, 69);
+  /* background-color: rgb(18, 53, 69); */
 }
 .bottomImage {
   position: fixed !important;
@@ -163,7 +163,7 @@ input[type="checkbox"] {
   position: fixed !important;
   bottom: 0px;
   width: 100%;
-  height: 100px;
+  height: 130px;
   background-image: url("../../public/vector3.png");
   background-size: cover;
 }

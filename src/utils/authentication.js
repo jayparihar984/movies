@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 async function varifyToken(token) {
 
-    console.log("test",token);
+
     if(!token)
     {
         return 0;

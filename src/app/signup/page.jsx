@@ -22,7 +22,7 @@ export default function HomePage() {
     if (Object.keys(errs).length) return setErrors(errs);
 
     setIsSubmitting(true);
-    axios
+    await axios
       .post("/api/signup", newUser)
       .then(function (response) {
         console.log(response);

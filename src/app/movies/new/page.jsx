@@ -24,7 +24,7 @@ const NewTask = () => {
       : "";
 
     setIsSubmitting(true);
-    axios
+    await axios
       .post(
         `/api/movies/${params.id}`,
         {},

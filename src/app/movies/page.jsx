@@ -35,7 +35,7 @@ export default function HomePage() {
     fd.append("page", activePage);
     fd.append("action", "get-all");
     fd.append("page_count", 8);
-    axios
+    await axios
       .post("/api/movies", fd, {
         headers: { Authorization: `Bearer ${localUser?.token}` },
       })
@@ -52,14 +52,7 @@ export default function HomePage() {
         }
       });
 
-    axios
-      .post("/api/movies", fd)
-      .then(function (response) {
-        setMovies(response.data.data);
-        setTottalItem(response.data.total_count);
-        setNoRecord(true);
-      })
-      .catch(function (error) {});
+   
   };
 
   const logout = () => {

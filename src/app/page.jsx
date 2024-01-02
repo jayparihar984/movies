@@ -23,7 +23,7 @@ export default function HomePage() {
     if (Object.keys(errs).length) return setErrors(errs);
 
     setIsSubmitting(true);
-    axios
+    await axios
       .post("/api/login", newUser)
       .then(function (response) {
         if (newUser.remember == true) {
@@ -105,7 +105,7 @@ export default function HomePage() {
           </div>
           <div className="my-5">
             <input
-              autocomplete="new-password"
+              autoComplete="new-password"
               type="password"
               placeholder="Password"
               name="password"
